@@ -1,12 +1,19 @@
-import 'package:flutter_test/flutter_test.dart';
-
+import 'package:test/test.dart';
 import 'package:application_language/application_language.dart';
 
-void main() {
-  test('adds one to input values', () {
-    final calculator = Calculator();
-    expect(calculator.addOne(2), 3);
-    expect(calculator.addOne(-7), -6);
-    expect(calculator.addOne(0), 1);
+void main(){
+  // Captura texto.
+  group(
+    'Testando o uso da classe ApplicationLanguage.', 
+    (){
+      test(
+        'Estancia classe',
+        () {
+          final ApplicationLanguage lng      = ApplicationLanguage();
+          final ApplicationLanguage language = ApplicationLanguage();
+          expect(
+            language,
+            equals(lng));
+      });
   });
 }
