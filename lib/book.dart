@@ -1,23 +1,24 @@
-import 'package:application_language/application_language.dart';
-
-class Book extends ApplicationLanguage
+class Book
 {
-  Map<String, String>? texts;
-
-  @override
-  String? out(String text)
+  late Map<String, String> texts;
+  // Devolve o texto para o indice.
+  String? out(String index)
   {
-    return texts![text];
+      String? dd = texts[index];
+      if(dd == null || dd.isEmpty){
+        return '';
+      }
+      return dd;
   }
-
-  @override
-  void add({ required String index, required String text})
+  // Inclue texto no mapa como o indice.
+  bool add(String index, String text)
   {
-    texts![index] = text;
+    texts[index] = text;
+    return true;
   }
-
-  Map<String, String>? get myColection => texts;
-  set myColetion(Map<String, String> colection){
-    texts = colection;
+  // get e set texts
+  Map<String, String>? get myTexts => texts;
+  set myTexts(Map<String, String> book){
+    texts = book;
   }
 }

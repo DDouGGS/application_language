@@ -1,5 +1,6 @@
 import 'package:test/test.dart';
 import 'package:application_language/application_language.dart';
+import 'package:application_language/pt_br_sample.dart';
 
 void main(){
   // Captura texto.
@@ -9,11 +10,12 @@ void main(){
       test(
         'Estancia classe',
         () {
-          final ApplicationLanguage lng      = ApplicationLanguage();
-          final ApplicationLanguage language = ApplicationLanguage();
+          final lng = ApplicationLanguage('pt_br', PtBrSample());
+          const txt = 'This language for pt_br.';
           expect(
-            language,
-            equals(lng));
+            lng.out('pt_br'),
+            equals(txt)
+          );
       });
   });
 }

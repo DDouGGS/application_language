@@ -1,43 +1,38 @@
 import 'package:application_language/book.dart';
-import 'package:application_language/pt_br_basic.dart';
 
-class ApplicationLanguage {
-  String basic = 'pt_br_basic';
-  late Map books;
-
-  // main
-  void main()
+class ApplicationLanguage
+{
+  String basic = 'pt_br';
+  late Map<String, dynamic> books;
+  // contrutor
+  ApplicationLanguage(String basic, book)
   {
-    books[basic] = PtBrBasic();
-  }
-
-  // retorna a string para o indice passado
+    myBooks = {basic: book};
+  } 
+  // Devolve o texto para o indice.
   String? out(String text)
   {
     return books[basic].out(text);
   }
-
-  // adiciona temporariamente, na sessão, um indice e um valor
-  void add({ required String index, required String text})
+  // Inclue texto no mapa como o indice.
+  bool add({ required String index, required String text})
   {
-    books[basic].add(index: index, text: text);
+    return books[basic].add(index: index, text: text);
   }
-
   // Adiciona livro ao mapa
-  void book(String key, Book book)
+  bool book(String key, Book book)
   {
     books[key] = book;
+    return true;
   }
-
   // Get e Set basic
   String get myBasic => basic;
   set myBasic(String basic){
     this.basic = basic;
   }
-
   // Get e Set Books
-  Map get myBooks => books;
-  set myBooks(Map<String, Book> newBook){
+  Map<String, dynamic> get myBooks => books;
+  set myBooks(Map<String, dynamic> newBook){
     books = newBook;
   }
 }
