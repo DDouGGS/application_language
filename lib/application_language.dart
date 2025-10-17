@@ -1,4 +1,4 @@
-import 'package:application_language/book.dart';
+import 'package:application_language/books/book.dart';
 
 class ApplicationLanguage
 {
