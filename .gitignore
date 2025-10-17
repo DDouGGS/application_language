@@ -3,7 +3,7 @@
 # is commented out by default.
 .vscode/
 *.code-workspace
-/application_language.code-workspace
+application_language.code-workspace
 
 # Flutter/Dart/Pub related
 # Libraries should not include pubspec.lock, per https://dart.dev/guides/libraries/private-files#pubspeclock.
@@ -14,8 +14,9 @@
 /build/
 /coverage/
 /test/
-test/application_language_test.dart
+/test/application_language_test.dart
+test
 
 #Miscellanious
 *.drawio*
-/application_language.drawio
+application_language.drawio
