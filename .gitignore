@@ -12,8 +12,7 @@
 .flutter-plugins-dependencies
 /build/
 /coverage/
-test/
+/test/
 
 #Miscellanious
-*.drawio
-*.drawio.bkp
+*.drawio*

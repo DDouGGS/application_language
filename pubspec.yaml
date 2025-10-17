@@ -2,6 +2,7 @@ name: application_language
 description: "Gerência das bibliotecas de linguagem para o aplicativo."
 version: 0.0.1
 homepage:
+repository: https://github.com/DDouGGS/application_language
 
 environment:
   sdk: ^3.9.2
