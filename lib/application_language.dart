@@ -7,22 +7,34 @@ class ApplicationLanguage
   // contrutor
   ApplicationLanguage(String basic, book)
   {
-    myBooks = {basic: book};
+    myBasic = basic;
+    myBooks = {myBasic: book};
+  }
+  // construtor nomeado
+  ApplicationLanguage.books(Map<String, dynamic> books, String indexBasic)
+  {
+    myBasic = indexBasic;
+    myBooks = books;
   } 
   // Devolve o texto para o indice.
-  String? out(String text)
+  String out(String index)
   {
-    return books[basic].out(text);
+    return books[basic].out(index);
+  }
+  // Devolve texto fabricado
+  String molded(String index, Map<String,String> paramns)
+  {
+    return books[basic].molded(index, paramns);
   }
   // Inclue texto no mapa como o indice.
   bool add({ required String index, required String text})
   {
-    return books[basic].add(index: index, text: text);
+    return books[basic].add(index, text);
   }
   // Adiciona livro ao mapa
-  bool book(String key, Book book)
+  bool addBook(String index, Book book)
   {
-    books[key] = book;
+    books[index] = book;
     return true;
   }
   // Get e Set basic
